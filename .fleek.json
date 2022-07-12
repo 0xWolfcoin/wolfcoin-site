@@ -1,0 +1,8 @@
+{
+  "build": {
+    "image": "node:lts",
+    "command": "yarn && yarn build && yarn export",
+    "publicDir": "out",
+    "baseDir": "wolfcoin-site"
+  }
+}
