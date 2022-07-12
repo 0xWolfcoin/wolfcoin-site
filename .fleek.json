@@ -2,18 +2,18 @@
   "build": {
     "image": "node:lts",
     "command": "yarn && yarn build && yarn export",
-    "publicDir": "out"
-  },
-  "environment": {
-    "NEXT_PUBLIC_LOGO_PATH": "/logo.png",
-    "NEXT_PUBLIC_TOKEN_NAME": "ΞWOLF",
-    "NEXT_PUBLIC_HEADING": "Wolfcoin",
-    "NEXT_PUBLIC_TWITTER": "https://twitter.com/0xWolfcoin",
-    "NEXT_PUBLIC_ARTICLE": "https://mirror.xyz/wolfcoin.eth",
-    "NEXT_PUBLIC_GITHUB": "https://github.com/0xWolfcoin",
-    "NEXT_PUBLIC_RPC_NETWORK": "4",
-    "NEXT_PUBLIC_URL": "https://wolfcoin.eth/",
-    "NEXT_PUBLIC_CONTRACT_ADDRESS": "0xf6dbd4683e9CE9f894389D3611dB451F1eAcAbc7",
-    "NEXT_PUBLIC_RPC_URL": "https://eth-mainnet.alchemyapi.io/v2/GDlfhL2184sjLL9EdnNMUZglNjaaoiR3"
+    "publicDir": "out",
+    "environment": {
+      "NEXT_PUBLIC_LOGO_PATH": "/logo.png",
+      "NEXT_PUBLIC_TOKEN_NAME": "ΞWOLF",
+      "NEXT_PUBLIC_HEADING": "Wolfcoin",
+      "NEXT_PUBLIC_TWITTER": "https://twitter.com/0xWolfcoin",
+      "NEXT_PUBLIC_ARTICLE": "https://mirror.xyz/wolfcoin.eth",
+      "NEXT_PUBLIC_GITHUB": "https://github.com/0xWolfcoin",
+      "NEXT_PUBLIC_RPC_NETWORK": "4",
+      "NEXT_PUBLIC_URL": "https://wolfcoin.eth/",
+      "NEXT_PUBLIC_CONTRACT_ADDRESS": "0xf6dbd4683e9CE9f894389D3611dB451F1eAcAbc7",
+      "NEXT_PUBLIC_RPC_URL": "https://eth-mainnet.alchemyapi.io/v2/GDlfhL2184sjLL9EdnNMUZglNjaaoiR3"
+    }
   }
 }
