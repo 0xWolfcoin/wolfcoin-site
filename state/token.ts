@@ -2,6 +2,7 @@ import { eth } from "state/eth"; // ETH state provider
 import { ethers } from "ethers"; // Ethers
 import { useState } from "react"; // React
 import { createContainer } from "unstated-next"; // State management
+import { ContractError } from '../types/ContractError'
 
 function useToken() {
   // Collect global ETH state
@@ -46,29 +47,24 @@ function useToken() {
     try {
       const tx = await token.claimAirdrop();
       await tx.wait(1);
-    } catch (errorObject) {
-      // TODO: - show Wolfcoin errors to user.
-      // require(isAirdropActive, "Wolfcoin: Claim is inactive.");
-      // require(airdropSupply > 0, "Wolfcoin: Airdrop supply gone.");
-      // require(msg.sender.balance >= MINIMUM_BALANCE, "Wolfcoin: Balance too low.");
-      // require(!claimed[msg.sender], "Wolfcoin: Already claimed.");
-      console.error(`Error when claiming tokens: ${errorObject}`);
-      const errorCode: String = errorObject.error.message;
-      const messageStart = "execution reverted:"
-      switch (errorCode) {
-        case (`${messageStart} Wolfcoin: Claim is inactive.`): {
+    } catch (error) {
+      console.error(`Error when claiming tokens: ${JSON.stringify(error)}`);
+      const startOfMsg = "execution reverted: Wolfcoin:"
+      const contractError = error as ContractError
+      switch (contractError.reason) {
+        case (`${startOfMsg} Claim is inactive.`): {
           setContractErrorMessage("The Airdrop is over.");
           break
         }
-        case (`${messageStart} Wolfcoin: Airdrop supply gone.`): {
+        case (`${startOfMsg} Airdrop supply gone.`): {
           setContractErrorMessage("The Airdrop supply has been completely claimed.");
           break
         }
-        case (`${messageStart} Wolfcoin: Balance too low.`): {
+        case (`${startOfMsg} Balance too low.`): {
           setContractErrorMessage("Your wallet balance is too low. You need at least 0.25 ETH in your wallet.");
           break
         }
-        case (`${messageStart} Wolfcoin: Already claimed.`): {
+        case (`${startOfMsg} Already claimed.`): {
           setContractErrorMessage("You have already claimed your slice of the Airdrop.");
           break
         }
