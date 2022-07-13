@@ -10,10 +10,10 @@
       "NEXT_PUBLIC_TWITTER": "https://twitter.com/0xWolfcoin",
       "NEXT_PUBLIC_ARTICLE": "https://mirror.xyz/wolfcoin.eth",
       "NEXT_PUBLIC_GITHUB": "https://github.com/0xWolfcoin",
-      "NEXT_PUBLIC_RPC_NETWORK": "4",
       "NEXT_PUBLIC_URL": "https://wolfcoin.eth/",
       "NEXT_PUBLIC_CONTRACT_ADDRESS": "0xf6dbd4683e9CE9f894389D3611dB451F1eAcAbc7",
-      "NEXT_PUBLIC_RPC_URL": "https://eth-mainnet.alchemyapi.io/v2/GDlfhL2184sjLL9EdnNMUZglNjaaoiR3"
+      "NEXT_PUBLIC_RPC_URL": "https://eth-mainnet.alchemyapi.io/v2/GDlfhL2184sjLL9EdnNMUZglNjaaoiR3",
+      "NEXT_PUBLIC_RPC_NETWORK": "1"
     }
   }
 }
